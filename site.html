@@ -1,0 +1,94 @@
+<div class="demo-container">
+    <div class="neon-container">
+        <div class="content">
+            <h2>Cristiano</h2>
+            <p>Atletico</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font: arial, sans-serif;
+
+    }
+
+    .demo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .neon-container {
+        position: relative;
+        width: 200px;
+        height: 120px;
+        background: black;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .neon-container::before{
+        content: '';
+        position: absolute;
+       top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(from 0deg,transparent, #ff00ff, transparent, #00ffff, transparent, #ff00ff,transparent);
+        animation: rotate 5s linear infinite;
+        z-index: 1;
+        
+        
+    }
+    .neon-container::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        right: 3px;
+        bottom: 3px;
+        background: black;
+        border-radius: 10px;
+       z-index: 2;
+    }
+
+    .content {
+        position: relative;
+        z-index: 3;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+    .content h2 {
+        margin: 0 0 6px 0;
+        font-size: 24px;
+        color: aqua;
+        text-shadow: 0 0 6px #00ffff;
+    }
+    .content p {
+        margin: 0;
+        font-size: 16px;
+        color: #ff00ff;
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+</style>
